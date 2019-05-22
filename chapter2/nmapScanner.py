@@ -19,7 +19,8 @@ def connectToHost(targethost, targetport):
 	nm = nmap.PortScanner() 
 	nm.scan(targethost,targetport)
 	state = nm[targethost]['tcp'][int(targetport)]['state']
-	print 'targethost: ' + targethost + 'targetport: ' + targetport
+	print(state)
+	print ('targethost: ' + targethost + ' targetport: ' + targetport)
 
 def main():
 	targethost, targetports = parsing()

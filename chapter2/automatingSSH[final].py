@@ -37,7 +37,7 @@ def main():
 
 	if host == None or user == None or pass_file == None:
 		print (parser.usage)
-		exit(0)
+		exit(2)
 
 	with open(pass_file,'r') as lines:
 		for line in lines.readlines():
@@ -46,7 +46,7 @@ def main():
 				exit(0)
 			if Fails > 5:
 				print ("[!] Exiting: Too Many Socket Timeouts")
-				exit(0)
+				exit(1)
 
 			connectionLock.acquire()
 			password = line.strip('\r').strip('\n')
